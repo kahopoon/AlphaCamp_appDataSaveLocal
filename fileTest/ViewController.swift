@@ -27,9 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if let readData = NSArray(contentsOfFile: destination) {
-            for row in readData {
-                data.append(row as! String)
-            }
+            data = readData as! [String]
             updataUpload()
         }
     }
