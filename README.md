@@ -2,7 +2,7 @@
 
 ![Alt text](/screenshot.png?raw=true "main screen")
 
-User input something at text field, press 'Add!' to add input data into data array, update screen to show all array elments, by the time, write the array data on local file in order to reuse next time app open. 'Delete All!' almost the same concept, delete all elements on array, update screen, write empty to the local file.
+User input something at text field, press 'Add!' to add input data into data array, update screen to show all array elments, by the time, write the array data on local file in order to reuse when the app open next time. 'Delete All!' almost the same concept, delete all elements on array, update screen, write empty to the local file.
 
 ## declaration
 ```swift
