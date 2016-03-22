@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="fileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +17,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ6-mT-OOo">
+                                <rect key="frame" x="20" y="20" width="32" height="30"/>
+                                <state key="normal" title="Add!"/>
+                                <connections>
+                                    <action selector="fileAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lX1-YV-hhY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yle-Sq-CMv">
+                                <rect key="frame" x="20" y="53" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Qli-x4-77a"/>
+                                    <constraint firstAttribute="height" constant="30" id="TNu-2a-ALZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wF5-EJ-Afe">
+                                <rect key="frame" x="20" y="101" width="200" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2sy-mz-dHg"/>
+                                    <constraint firstAttribute="height" constant="300" id="m6q-1S-QwV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxj-QR-hLx">
+                                <rect key="frame" x="102" y="20" width="70" height="30"/>
+                                <state key="normal" title="Delete All!"/>
+                                <connections>
+                                    <action selector="dataDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tsu-7e-wOz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yle-Sq-CMv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4Bq-k8-wam"/>
+                            <constraint firstItem="wF5-EJ-Afe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7U8-QO-O34"/>
+                            <constraint firstItem="pJ6-mT-OOo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GGV-Op-uA0"/>
+                            <constraint firstItem="pJ6-mT-OOo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Tgh-7F-onL"/>
+                            <constraint firstItem="rxj-QR-hLx" firstAttribute="leading" secondItem="pJ6-mT-OOo" secondAttribute="trailing" constant="50" id="biV-Km-x0H"/>
+                            <constraint firstItem="rxj-QR-hLx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ncG-t9-Skb"/>
+                            <constraint firstItem="wF5-EJ-Afe" firstAttribute="top" secondItem="Yle-Sq-CMv" secondAttribute="bottom" constant="19" id="qUQ-8r-qQO"/>
+                            <constraint firstItem="Yle-Sq-CMv" firstAttribute="top" secondItem="pJ6-mT-OOo" secondAttribute="bottom" constant="3" id="ySJ-gL-cx0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataShow" destination="wF5-EJ-Afe" id="bp0-Qq-yBz"/>
+                        <outlet property="userInput" destination="Yle-Sq-CMv" id="LR5-Gc-kVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
